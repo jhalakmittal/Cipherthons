@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/Admin/Desktop/html/hpage1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Shopkeeper login</title>
+	<link rel="stylesheet" type="text/css" href="shopkeeper_login.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>Farmer's Yields
+<div class="topnav">
+ <a  href="index.html" class="sed">HOME</a>
+  <a  href="login.html">LOGIN</a>
+  <a  href="sign.html">SIGN UP</a>
+  <a  href="approval.html">Farmer Registration</a>
+  <a href="about.html">ABOUT US</a>
+  
+</div>
+</header>
+
+<h1 class="set">Hello Farmers!</h1>
+<body>
+	
+	<div id="f">
+		
+		<label for="uname">Username</label><br>
+		<input type="text" name="uname" placeholder="kartik_bhardwaj" required="">
+		<br>
+		<div  class="header1">
+  <h1>Items and their prices</h1>
+  <input type="text" id="myInput" placeholder="items  quantity   price">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+ 
+  <li>arhar dal   Rs 120/-per kg</li>
+  <li>Rice        Rs 60/-per kg</li>
+  
+  
+</ul>
+		
+		<a href="#" class="button">submit</a>
+		</div>
+
+
+		
+	</div>
+	
+<footer>
+	<div class="footer-bottom"> 
+		Copyright &copy; JASS 2020. All rights reserved.
+	</div>
+
+</footer>
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+	
+
+</body></html>
